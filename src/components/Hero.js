@@ -1,38 +1,32 @@
 function Hero() {
   return (
     <section id="home" className="hero">
-
       <div className="hero-content">
-
-        <p className="hero-small-text">
-          Hello, I'm
-        </p>
+        <span className="hero-label">Welcome to my Portfolio</span>
 
         <h1>
-          My First Name
+          Hi! I'm Jimia, a <br />
+          <br />
+          Full-Stack Developer
         </h1>
 
-        <h2>
-          Software Developer
-        </h2>
-
-        <p className="hero-description">
-          I build modern, responsive and user-friendly
-          applications using modern web technologies.
+        <p>
+          I'm a front-end developer with 3 years of experience in React,
+          HTML, CSS, JavaScript, and TypeScript. I focus on building
+          modern, responsive web apps with clean design and great user
+          experience.
         </p>
 
-        <div className="hero-buttons">
-          <a href="#projects" className="btn primary-btn">
-            View My Work
-          </a>
-
-          <a href="#contact" className="btn secondary-btn">
-            Contact Me
-          </a>
-        </div>
-
+        <a href="#contact" className="hero-link">
+          Let's Connect <span>→</span>
+        </a>
       </div>
 
+      <div className="hero-art" aria-hidden="true">
+        <div className="planet">
+          <div className="astronaut">◉</div>
+        </div>
+      </div>
     </section>
   );
 }

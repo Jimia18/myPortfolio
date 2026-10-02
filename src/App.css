@@ -26,36 +26,269 @@ a {
     #0d0d0f;
 }
 
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
-  width: min(1100px, 90%);
+  width: 100%;
   height: 80px;
-  margin: auto;
+  padding: 0 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+
+  background: #400264;
+  border-bottom: 1px solid #523535;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+/* =========================
+   LOGO
+========================= */
 
 .navbar-logo {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 4px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
-.navbar-links,
+.logo-text {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #7e1f1f;
+  color: #4d256e;
+
+  border-radius: 50%;
+
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -1px;
+
+  transition: 0.3s ease;
+}
+
+.navbar-logo:hover .logo-text {
+  transform: scale(1.08);
+  background: #ce1697;
+}
+
+/* =========================
+   NAVIGATION LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: #f1eaea;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: color 0.3s ease;
+}
+
+/* Hover underline */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: #2563eb;
+
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   NAVBAR ACTIONS
+========================= */
+
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 15px;
 }
 
-.navbar-links a {
-  color: #bcbcbc;
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.social-link {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #aa8787;
+  border-radius: 50%;
+
+  color: #333333;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
 }
 
-.navbar-links a:hover,
-.hero-link:hover {
-  color: #b46cff;
+.social-link:hover {
+  background: #2563eb;
+  color: #e4dede;
+  border-color: #2563eb;
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   LET'S CONNECT BUTTON
+========================= */
+
+.connect-button {
+  padding: 12px 22px;
+
+  background: #182153;
+  color: #ffffff;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.connect-button:hover {
+  background: #13347c;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .connect-button {
+    padding: 10px 16px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .navbar {
+    height: auto;
+    min-height: 70px;
+    padding: 15px 5%;
+
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .nav-links {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    padding-top: 10px;
+    border-top: 1px solid #eeeeee;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .social-link {
+    width: 34px;
+    height: 34px;
+  }
+
+  .connect-button {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar-logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
 }
 
 .social-link {
@@ -210,5 +443,205 @@ h1 {
 
   .section {
     padding: 35px 20px;
+  }
+}
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+#projects {
+  padding: 100px 6%;
+  background: #290a38;
+}
+
+#projects .section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section title */
+
+#projects .section-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 50px;
+}
+
+/* =========================
+   PROJECT GRID
+========================= */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project-card {
+  background: #ffffff;
+
+  border: 1px solid #e8e8e8;
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  transition: all 0.35s ease;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+/* =========================
+   PROJECT IMAGE
+========================= */
+
+.project-image {
+  width: 100%;
+  height: 230px;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+/* Image zoom on hover */
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* =========================
+   PROJECT CONTENT
+========================= */
+
+.project-content {
+  padding: 25px;
+}
+
+.project-content h3 {
+  margin: 0 0 12px;
+
+  color: #111111;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.project-content p {
+  margin: 0 0 20px;
+
+  color: #666666;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================
+   TECHNOLOGY TAG
+========================= */
+
+.project-content span {
+  display: inline-block;
+
+  padding: 7px 13px;
+
+  background: #f1f5ff;
+  color: #2563eb;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   PROJECT BUTTON
+========================= */
+
+.project-button {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 10px 18px;
+
+  background: #111111;
+  color: #ffffff;
+
+  border-radius: 5px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.project-button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #projects {
+    padding: 80px 5%;
+  }
+
+  #projects .section-title {
+    font-size: 36px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  #projects {
+    padding: 70px 5%;
+  }
+
+  #projects .section-title {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .project-image {
+    height: 220px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-content h3 {
+    font-size: 20px;
   }
 }
